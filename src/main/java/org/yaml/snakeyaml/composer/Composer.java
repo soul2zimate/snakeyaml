@@ -228,7 +228,8 @@ public class Composer {
       resolved = true;
     } else {
       nodeTag = new Tag(tag);
-      if (nodeTag.isCustomGlobal() && !loadingConfig.getTagInspector().allowGlobalTag(nodeTag)) {
+      if (nodeTag.isCustomGlobal()
+          && !loadingConfig.getTagInspector().isGlobalTagAllowed(nodeTag)) {
         throw new ComposerException(null, null, "Global tag is not allowed: " + tag,
             ev.getStartMark());
       }
@@ -255,7 +256,8 @@ public class Composer {
       resolved = true;
     } else {
       nodeTag = new Tag(tag);
-      if (nodeTag.isCustomGlobal() && !loadingConfig.getTagInspector().allowGlobalTag(nodeTag)) {
+      if (nodeTag.isCustomGlobal()
+          && !loadingConfig.getTagInspector().isGlobalTagAllowed(nodeTag)) {
         throw new ComposerException(null, null, "Global tag is not allowed: " + tag,
             startEvent.getStartMark());
       }
@@ -299,7 +301,8 @@ public class Composer {
       resolved = true;
     } else {
       nodeTag = new Tag(tag);
-      if (nodeTag.isCustomGlobal() && !loadingConfig.getTagInspector().allowGlobalTag(nodeTag)) {
+      if (nodeTag.isCustomGlobal()
+          && !loadingConfig.getTagInspector().isGlobalTagAllowed(nodeTag)) {
         throw new ComposerException(null, null, "Global tag is not allowed: " + tag,
             startEvent.getStartMark());
       }
